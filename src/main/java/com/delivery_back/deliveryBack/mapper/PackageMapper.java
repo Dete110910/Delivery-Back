@@ -4,7 +4,7 @@ import com.delivery_back.deliveryBack.dto.PackageDTO;
 import com.delivery_back.deliveryBack.entity.PackageEntity;
 import org.mapstruct.Mapper;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = TrackingHistoryMapper.class)
 public interface PackageMapper {
 
     PackageDTO toDTO(PackageEntity entity);

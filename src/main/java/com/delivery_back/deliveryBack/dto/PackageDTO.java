@@ -1,6 +1,6 @@
 package com.delivery_back.deliveryBack.dto;
 
-import com.delivery_back.deliveryBack.enums.PackageStates;
+import com.delivery_back.deliveryBack.entity.TrackingEvent;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -14,6 +14,6 @@ public record PackageDTO(
         String deliverName,
         LocalDate dispatchDate,
         int amountUnits,
-        List<String> trackingHistory
+        List<TrackingHistoryDTO> trackingHistory
 ) {
 }

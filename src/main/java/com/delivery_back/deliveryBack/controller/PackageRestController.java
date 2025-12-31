@@ -1,11 +1,11 @@
 package com.delivery_back.deliveryBack.controller;
 
 import com.delivery_back.deliveryBack.dto.PackageDTO;
+import com.delivery_back.deliveryBack.dto.TrackingHistoryDTO;
 import com.delivery_back.deliveryBack.service.PackageService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class PackageRestController {
@@ -14,8 +14,12 @@ public class PackageRestController {
     private PackageService packageService;
 
     @GetMapping("/trackOrder/{id}")
-    public PackageDTO getPackageById(@PathVariable("id") Long id) {
-        System.out.println("Respuesta: " + this.packageService.getPackageById(id));
-        return this.packageService.getPackageById(id);
+    public ResponseEntity<PackageDTO> getPackageById(@PathVariable("id") Long id) {
+        return ResponseEntity.ok(this.packageService.getPackageById(id));
+    }
+
+    @PostMapping("/addTrackingEvent/{id}")
+    public ResponseEntity<PackageDTO> addTrackingEvent(@PathVariable("id") Long id, @RequestBody TrackingHistoryDTO trackingHistoryDTO) {
+        return ResponseEntity.ok(this.packageService.addTrackingEvent(id, trackingHistoryDTO));
     }
 }

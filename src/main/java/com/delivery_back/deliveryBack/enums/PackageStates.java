@@ -1,17 +1,16 @@
 package com.delivery_back.deliveryBack.enums;
 
+import lombok.Getter;
+
 public enum PackageStates {
     UNDER_CONSTRUCTION("Armando el pedido"),
-    ON_WAY("Em camino"),
+    ON_WAY("En camino"),
     DELIVERED("Entregado");
 
-    private String stateDescription;
+    @Getter
+    private final String stateDescription;
 
     PackageStates(String stateDescription) {
         this.stateDescription = stateDescription;
-    }
-
-    public String getStateDescription() {
-        return stateDescription;
     }
 }

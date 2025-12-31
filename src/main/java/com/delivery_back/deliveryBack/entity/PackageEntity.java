@@ -1,16 +1,15 @@
 package com.delivery_back.deliveryBack.entity;
 
 import com.delivery_back.deliveryBack.enums.PackageStates;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.Getter;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Getter
 public class PackageEntity {
 
     @Id
@@ -23,7 +22,10 @@ public class PackageEntity {
     private String deliverName;
     private LocalDate dispatchDate;
     private int amountUnits;
-    private List<PackageStates> trackingHistory;
+
+    @OneToMany(mappedBy = "pkg", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<TrackingEvent> trackingHistory = new ArrayList();
+
 
     public PackageEntity() {
         this.id = 0L;
@@ -34,10 +36,10 @@ public class PackageEntity {
         this.deliverName = null;
         this.dispatchDate = null;
         this.amountUnits = 0;
-        this.trackingHistory = null;
+        this.trackingHistory = new ArrayList();
     }
 
-    public PackageEntity(PackageStates currentState, String origin, String destination, String ownerName, String deliverName, LocalDate dispatchDate, int amountUnits, List<PackageStates> trackingHistory) {
+    public PackageEntity(PackageStates currentState, String origin, String destination, String ownerName, String deliverName, LocalDate dispatchDate, int amountUnits) {
         this.currentState = currentState;
         this.origin = origin;
         this.destination = destination;
@@ -45,44 +47,11 @@ public class PackageEntity {
         this.deliverName = deliverName;
         this.dispatchDate = dispatchDate;
         this.amountUnits = amountUnits;
-        this.trackingHistory = trackingHistory;
+        this.trackingHistory = new ArrayList();
     }
 
-
-    public Long getId() {
-        return id;
-    }
-
-    public PackageStates getCurrentState() {
-        return currentState;
-    }
-
-    public String getOrigin() {
-        return origin;
-    }
-
-    public String getDestination() {
-        return destination;
-    }
-
-    public String getOwnerName() {
-        return ownerName;
-    }
-
-    public String getDeliverName() {
-        return deliverName;
-    }
-
-    public LocalDate getDispatchDate() {
-        return dispatchDate;
-    }
-
-    public int getAmountUnits() {
-        return amountUnits;
-    }
-
-    public List<PackageStates> getTrackingHistory() {
-        return trackingHistory;
+    public void addTrackingEvent(TrackingEvent event) {
+        this.trackingHistory.add(event);
     }
 
     @Override
@@ -94,7 +63,6 @@ public class PackageEntity {
                 ", destination='" + destination + '\'' +
                 ", ownerName='" + ownerName + '\'' +
                 ", dispatchDate=" + dispatchDate +
-                ", trackingHistory=" + trackingHistory +
                 '}';
     }
 }
