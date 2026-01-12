@@ -1,6 +1,5 @@
-package com.delivery_back.deliveryBack.controller;
+package com.deliveryBack.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController

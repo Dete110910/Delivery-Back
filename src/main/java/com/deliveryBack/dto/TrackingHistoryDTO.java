@@ -1,6 +1,6 @@
-package com.delivery_back.deliveryBack.dto;
+package com.deliveryBack.dto;
 
-import com.delivery_back.deliveryBack.enums.PackageStates;
+import com.deliveryBack.enums.PackageStates;
 
 import java.time.LocalDateTime;
 

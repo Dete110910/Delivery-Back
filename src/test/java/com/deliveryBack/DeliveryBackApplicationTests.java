@@ -1,4 +1,4 @@
-package com.delivery_back.deliveryBack;
+package com.deliveryBack;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

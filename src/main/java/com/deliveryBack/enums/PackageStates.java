@@ -1,4 +1,4 @@
-package com.delivery_back.deliveryBack.enums;
+package com.deliveryBack.enums;
 
 import lombok.Getter;
 

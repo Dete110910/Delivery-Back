@@ -1,9 +1,9 @@
-package com.delivery_back.deliveryBack;
+package com.deliveryBack;
 
-import com.delivery_back.deliveryBack.entity.PackageEntity;
-import com.delivery_back.deliveryBack.entity.TrackingEvent;
-import com.delivery_back.deliveryBack.enums.PackageStates;
-import com.delivery_back.deliveryBack.repository.PackageRepository;
+import com.deliveryBack.entity.PackageEntity;
+import com.deliveryBack.entity.TrackingEvent;
+import com.deliveryBack.enums.PackageStates;
+import com.deliveryBack.repository.PackageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

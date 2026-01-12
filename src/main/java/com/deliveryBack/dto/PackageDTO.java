@@ -1,6 +1,4 @@
-package com.delivery_back.deliveryBack.dto;
-
-import com.delivery_back.deliveryBack.entity.TrackingEvent;
+package com.deliveryBack.dto;
 
 import java.time.LocalDate;
 import java.util.List;

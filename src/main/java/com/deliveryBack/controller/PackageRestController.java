@@ -1,8 +1,8 @@
-package com.delivery_back.deliveryBack.controller;
+package com.deliveryBack.controller;
 
-import com.delivery_back.deliveryBack.dto.PackageDTO;
-import com.delivery_back.deliveryBack.dto.TrackingHistoryDTO;
-import com.delivery_back.deliveryBack.service.PackageService;
+import com.deliveryBack.dto.PackageDTO;
+import com.deliveryBack.dto.TrackingHistoryDTO;
+import com.deliveryBack.service.PackageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

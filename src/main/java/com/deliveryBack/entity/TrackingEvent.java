@@ -1,6 +1,6 @@
-package com.delivery_back.deliveryBack.entity;
+package com.deliveryBack.entity;
 
-import com.delivery_back.deliveryBack.enums.PackageStates;
+import com.deliveryBack.enums.PackageStates;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

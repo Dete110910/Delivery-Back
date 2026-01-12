@@ -1,7 +1,7 @@
-package com.delivery_back.deliveryBack.mapper;
+package com.deliveryBack.mapper;
 
-import com.delivery_back.deliveryBack.dto.TrackingHistoryDTO;
-import com.delivery_back.deliveryBack.entity.TrackingEvent;
+import com.deliveryBack.dto.TrackingHistoryDTO;
+import com.deliveryBack.entity.TrackingEvent;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

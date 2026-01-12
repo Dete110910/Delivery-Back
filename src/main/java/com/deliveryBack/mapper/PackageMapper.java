@@ -1,7 +1,7 @@
-package com.delivery_back.deliveryBack.mapper;
+package com.deliveryBack.mapper;
 
-import com.delivery_back.deliveryBack.dto.PackageDTO;
-import com.delivery_back.deliveryBack.entity.PackageEntity;
+import com.deliveryBack.dto.PackageDTO;
+import com.deliveryBack.entity.PackageEntity;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring", uses = TrackingHistoryMapper.class)
